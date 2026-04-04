@@ -8,3 +8,15 @@
 [VILAB](https://vi.kaist.ac.kr/), KAIST
 
 <sup>*</sup> Equal contribution
+
+## Citation
+
+If you use this work, please cite:
+
+```bibtex
+@inproceedings{cho2026dsertroll,
+  title={DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR},
+  author={Cho, Hoonhee and Kang, Jae-Young and Jeong, Yuhwan and Yang, Yunseo and Lee, Wonyoung and Kim, Youngho and Yoon, Kuk-Jin},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
+}
