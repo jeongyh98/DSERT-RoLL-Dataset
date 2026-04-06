@@ -15,6 +15,72 @@ You can download the DSERT-RoLL dataset from Hugging Face:
 
 https://huggingface.co/datasets/jeongyh98/DSERT-RoLL
 
+### Directory Structure
+
+```text
+DSERT-RoLL/
+│
+├── split/
+│   ├── train.txt
+│   └── val.txt
+│
+├── {weather}/                        # Clear | Fog | Heavy_Rain | Heavy_Snow | Light_Rain | Light_Snow
+│   └── {sequence_name}/              # e.g. 2025_07_16_21_36_14
+│       ├── label.pkl                 # annotations & calibration for the sequence
+│       │
+│       ├── rectified_crop_RGB_L/     # Left RGB images         (.jpg)
+│       ├── rectified_crop_RGB_R/     # Right RGB images        (.jpg)
+│       ├── rectified_EVENT_L/        # Left event frames       (.npz)
+│       ├── rectified_EVENT_R/        # Right event frames      (.npz)
+│       ├── rectified_THERMAL_L/      # Left thermal images     (.npz)
+│       ├── rectified_THERMAL_R/      # Right thermal images    (.npz)
+│       ├── LIDAR_LIVOX_Tilted/       # Livox LiDAR point cloud (.npy)
+│       ├── LIDAR_OUSTER_Tilted_90_degree/  # Ouster LiDAR point cloud (.npy)
+│       └── RADAR_Tilted/             # Radar point cloud       (.npy)
+```
+
+### Statistics
+
+```text
+Clear:       102 sequences / 11,877 frames
+Fog:          32 sequences /  3,282 frames
+Heavy_Rain:   18 sequences /  1,898 frames
+Light_Rain:   17 sequences /  2,214 frames
+Light_Snow:   14 sequences /  1,428 frames
+Heavy_Snow:    7 sequences /    980 frames
+─────────────────────────────────────────
+Total:       190 sequences / 21,679 frames
+```
+
+### `label.pkl` Structure
+
+```text
+label.pkl
+├── meta
+│   ├── weather          # 날씨 조건
+│   ├── light            # 조명 조건 (e.g. Low_Light)
+│   ├── sequence_len     # 프레임 수
+│   └── calibration      # 센서별 intrinsic/extrinsic 행렬
+│       ├── Livox, Ouster, Radar
+│       └── RGB_L/R, Thermal_L/R, Event_L/R
+│
+└── info                 # 프레임별 리스트
+  ├── time_stamp
+  ├── sample_idx / frame_idx
+  ├── sequence_name
+  ├── pose
+  ├── sensor           # 각 센서 파일 상대경로
+  │   ├── rgb_left_path / rgb_right_path
+  │   ├── event_left_path / event_right_path
+  │   ├── thermal_left_path / thermal_right_path
+  │   ├── livox_path / ouster_path
+  │   └── radar_path
+  └── annos            # 3D bounding box 어노테이션
+    ├── name, obj_ids
+    ├── dimensions, location, heading_angles
+    └── gt_boxes_livox / gt_boxes_rgb / gt_boxes_event / gt_boxes_thermal
+```
+
 ## Citation
 
 If you use this work, please cite:
