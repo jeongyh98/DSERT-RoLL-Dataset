@@ -30,8 +30,9 @@ You can download the DSERT-RoLL dataset here:
 
 | Split | Sequences |
 |------:|----------:|
-| Train | 136 |
-| Val   | 60  |
+| Train | 132 |
+| Val   | 58  |
+| Total | 190 |
 
 ### Directory Structure
 
