@@ -9,6 +9,12 @@
 
 <sup>*</sup> Equal contribution
 
+## Dataset
+
+You can download the DSERT-RoLL dataset from Hugging Face:
+
+https://huggingface.co/datasets/jeongyh98/DSERT-RoLL
+
 ## Citation
 
 If you use this work, please cite:
