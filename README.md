@@ -11,9 +11,27 @@
 
 ## Dataset
 
-You can download the DSERT-RoLL dataset from Hugging Face:
+### 🤗 Download on Hugging Face
 
-https://huggingface.co/datasets/jeongyh98/DSERT-RoLL
+[![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/datasets/jeongyh98/DSERT-RoLL)
+
+You can download the DSERT-RoLL dataset here:
+
+👉 https://huggingface.co/datasets/jeongyh98/DSERT-RoLL
+
+**Total Size:** 269 GB
+
+### 3. 환경 조건
+
+- **날씨:** Clear / Fog / Light Rain / Heavy Rain / Light Snow / Heavy Snow
+- **조명:** Normal / Low Light / Over Expose / HDR
+
+### 4. Train/Val Split
+
+| Split | Sequences |
+|------:|----------:|
+| Train | 136 |
+| Val   | 60  |
 
 ### Directory Structure
 
