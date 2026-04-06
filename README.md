@@ -23,12 +23,12 @@ You can download the DSERT-RoLL dataset here:
 
 **Total Size:** 269 GB
 
-### 3. 환경 조건
+### Environmental Conditions
 
-- **날씨:** Clear / Fog / Light Rain / Heavy Rain / Light Snow / Heavy Snow
-- **조명:** Normal / Low Light / Over Expose / HDR
+- **Weather:** Clear / Fog / Light Rain / Heavy Rain / Light Snow / Heavy Snow
+- **Lighting:** Normal / Low Light / Over Expose / HDR
 
-### 4. Train/Val Split
+### Train/Validation Split
 
 | Split | Sequences |
 |------:|----------:|
@@ -78,25 +78,25 @@ Total:       190 sequences / 21,679 frames
 ```text
 label.pkl
 ├── meta
-│   ├── weather          # 날씨 조건
-│   ├── light            # 조명 조건 (e.g. Low_Light)
-│   ├── sequence_len     # 프레임 수
-│   └── calibration      # 센서별 intrinsic/extrinsic 행렬
+│   ├── weather          # weather condition
+│   ├── light            # lighting condition (e.g. Low_Light)
+│   ├── sequence_len     # number of frames
+│   └── calibration      # sensor-wise intrinsic/extrinsic matrices
 │       ├── Livox, Ouster, Radar
 │       └── RGB_L/R, Thermal_L/R, Event_L/R
 │
-└── info                 # 프레임별 리스트
+└── info                 # per-frame list
   ├── time_stamp
   ├── sample_idx / frame_idx
   ├── sequence_name
   ├── pose
-  ├── sensor           # 각 센서 파일 상대경로
+  ├── sensor           # relative file paths for each sensor
   │   ├── rgb_left_path / rgb_right_path
   │   ├── event_left_path / event_right_path
   │   ├── thermal_left_path / thermal_right_path
   │   ├── livox_path / ouster_path
   │   └── radar_path
-  └── annos            # 3D bounding box 어노테이션
+  └── annos            # 3D bounding box annotations
     ├── name, obj_ids
     ├── dimensions, location, heading_angles
     └── gt_boxes_livox / gt_boxes_rgb / gt_boxes_event / gt_boxes_thermal
