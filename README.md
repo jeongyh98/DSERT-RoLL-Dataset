@@ -102,6 +102,48 @@ label.pkl
     └── gt_boxes_livox / gt_boxes_rgb / gt_boxes_event / gt_boxes_thermal
 ```
 
+## Visualization
+
+`viz.py` renders all sensor combinations in a 3×6 grid (rows: RGB / Event / Thermal, columns: Livox / Ouster / Radar × Left / Right) and saves each frame as a JPG.
+
+### Installation
+
+```bash
+pip install opencv-python numpy matplotlib
+```
+
+### Usage
+
+```bash
+# All sessions
+python viz.py --root_path /path/to/DSERT-RoLL
+
+# Single session
+python viz.py --root_path /path/to/DSERT-RoLL --session 2025_04_01_16_15_57
+
+# With 3D bounding boxes
+python viz.py --root_path /path/to/DSERT-RoLL --bbox
+
+# Additional options
+python viz.py --root_path /path/to/DSERT-RoLL \
+              --session 2025_04_01_16_15_57 \
+              --bbox \
+              --num_frames 50 \
+              --dpi 150 \
+              --out_subdir viz_output
+```
+
+| Argument | Default | Description |
+|---|---|---|
+| `--root_path` | required | Root dataset path (contains weather-named subdirectories) |
+| `--session` | all | Process only the specified session name |
+| `--bbox` | off | Overlay 3D bounding boxes on Livox panels |
+| `--num_frames` | all | Maximum number of frames to render per session |
+| `--dpi` | 80 | DPI of saved JPG images |
+| `--out_subdir` | `viz_frames` | Output subdirectory name inside each session folder |
+
+Output images are saved as `{session_folder}/{out_subdir}/frame_XXXX.jpg`.
+
 ## Citation
 
 If you use this work, please cite:
